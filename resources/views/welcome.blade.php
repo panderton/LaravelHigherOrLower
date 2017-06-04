@@ -29,8 +29,20 @@
                         {{ $Deck[0] }}
                     </h3>
                 </div>
+                <form>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                </form>
+                <button type="button" id="higher" class="btn btn-success col-lg-6" data-link="{{ url('/test') }}">Higher</button>
+                <button type="button" id="lower" class="btn btn-danger col-lg-6">Lower</button>
             </div>
-            
+            <div class="col-lg-6">
+                <h3 class="text-center">
+                    Lives
+                </h3>
+            </div> 
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{{ URL::asset('js/Cards.js')}}"></script>
     </body>
 </html>

@@ -17,7 +17,7 @@ class Cards extends Controller
         $this->_SetCardsValueArray();
         $this->_SetDeck();
         $this->_ShuffleDeck();
-        return view('welcome',['Deck' => $this->Deck]);
+        return view('welcome',['Deck' => $this->Deck, 'Values' => $this->ValueArray]);
     }
     
     private function _SetCardsValueArray()
@@ -53,5 +53,23 @@ class Cards extends Controller
             $this->Deck[$Key] = $Card2;
             $this->Deck[$Card2_Key] = $Card;
         }
+    }
+    
+    public function NextCard()
+    {        
+        var_dump('test');exit;
+        $Outcome = 0;
+        // Cycle to the next card in the deck and compare its value with first
+        foreach($this->Deck as $Key => $Card)
+        {
+            // Compare the last card with the next card
+            if($Card)
+            {
+                $Outcome = 1;
+            }
+        }    
+        
+        // Return as JSON so JQuery can display the next card and outcome
+        echo json_encode(array('Deck' => $this->Deck, 'NextCard' => $Card, 'Outcome' => $Outcome));
     }
 }

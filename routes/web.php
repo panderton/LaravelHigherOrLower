@@ -16,3 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('Cards', 'Cards@index');
+
+Route::post('NextCard', 'Cards@NextCard');
+
+Route::post('test', function()
+{
+    return 'Success!';
+});
